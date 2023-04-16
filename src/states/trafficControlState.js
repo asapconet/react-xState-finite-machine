@@ -1,52 +1,29 @@
 import { createMachine } from "xstate";
 
-const timedActionsState = {
-  initial: "go",
+export const trafficMachine = createMachine({
+  id: "trafficLights",
+  initial: "stop",
   states: {
     stop: {
-      yes: {
-        ACTION_TIMER: "stop",
+      on: {
+        NEXT: {
+          target: "ready",
+        },
       },
     },
     ready: {
-      yes: {
-        ACTION_TIMER: "ready",
+      on: {
+        NEXT: {
+          target: "go",
+        },
       },
     },
     go: {
-      yes: {
-        ACTION_TIMER: "go",
-      },
-    },
-  },
-};
-
-export const trafficLightMachine = createMachine({
-  id: "trafficLights",
-  initial: "red",
-  states: {
-    red: {
       on: {
         NEXT: {
-          target: "yellow",
-        },
-      },
-    },
-    yellow: {
-      on: {
-        NEXT: {
-          target: "green",
-        },
-      },
-    },
-    green: {
-      on: {
-        NEXT: {
-          target: "red",
+          target: "stop",
         },
       },
     },
   },
 });
-let currentAction = "red";
-const nextAction = trafficLightMachine.transition(currentAction);

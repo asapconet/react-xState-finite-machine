@@ -17,7 +17,7 @@ button {
 }
 .dark-theme {
   background-color: black !important;
-  color: white !important;
+  color: white;
 }
 .container {
   gap: 5;
@@ -45,18 +45,22 @@ li {
   justify-content: center;
   margin-bottom: 4px;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 900;
   list-style: none;
   border-radius: 100%;
   width: 130px;
   height: 130px;
+  background-color: gray;
 }
 .red {
-  background-color: rgb(230, 150, 150);
+  background-color: RED;
+  color: white;
 }
 .yellow {
-  background-color: rgb(246, 246, 159);
+  background-color: yellow;
+  color: black !important;
 }
 .green {
-  background-color: rgb(183, 239, 183);
+  background-color: green;
+  color: white;
 }

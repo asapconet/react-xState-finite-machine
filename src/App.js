@@ -36,13 +36,13 @@ function App() {
       </div>
       <div>
         <ul className="light-container">
-          <li className={current.matches("stop.") && "red"}>
+          <li className={current.matches("stop") && "red"}>
             {current.matches("stop") && "STOP"}
           </li>
-          <li className={current.matches("ready;") && "yellow"}>
+          <li className={current.matches("ready") && "yellow"}>
             {current.matches("ready") && "READY"}
           </li>
-          <li className={current.matches("go;") && "green"}>
+          <li className={current.matches("go") && "green"}>
             {current.matches("go") && "GO"}
           </li>
         </ul>
